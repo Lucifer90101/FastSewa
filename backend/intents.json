@@ -3,30 +3,51 @@
     {
       "tag": "greeting",
       "patterns": [
-        "Hi", "Hello", "Hey", "Good morning", "Good evening", 
-        "Start", "Help", "Namaste", "Hola"
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good evening",
+        "Start",
+        "Help",
+        "Namaste",
+        "Hi FastSewa"
       ],
       "responses": [
-        "Hello! 👋 Welcome to FastSewa.\n\nI can assist you with:\n🏗️ Construction\n🛡️ Security Guards\n⚖️ Legal & GST\n🏥 Medical Services\n🏞️ Land Verification\n🔧 Repair & Maintenance\n\nWhat do you need today?"
+        "Hello! Welcome to FastSewa.\n\nI can assist you with:\n🏗️ Construction\n🛡️ Security Guards\n⚖️ Legal & GST\n🏥 Medical Services\n🏞️ Land Verification\n🔧 Repair & Maintenance\n💰 Finance Assistant\n🧱 Material Suppliers\n\nWhat do you need today?"
       ]
     },
     {
       "tag": "construction_start",
       "patterns": [
-        "I want construction", "Build a house", "I need a home builder",
-        "Construction quote", "New home design", "Renovation",
-        "Building project", "Contractor needed"
+        "construction",
+        "construction service",
+        "construction quote",
+        "construction quotes",
+        "construction enquiry",
+        "I want construction",
+        "Build a house",
+        "I need a home builder",
+        "New home design",
+        "Renovation",
+        "Building project",
+        "Contractor needed"
       ],
       "responses": [
-        "Great! 🏗️ I'll help you generate a Construction quote instantly.\n\nFirst, what is the Plot Size? (Example: 1500 sqft)"
+        "Great! 🏗️ I will help you generate a Construction quote instantly.\n\nFirst, what is the plot size? (Example: 1500 sqft)"
       ],
       "context_set": "waiting_for_plotsize"
     },
     {
       "tag": "security_start",
       "patterns": [
-        "Need security guard", "Security services", "Hire guards",
-        "Watchman needed", "Security for office", "Residential security"
+        "security",
+        "Need security guard",
+        "Security services",
+        "Hire guards",
+        "Watchman needed",
+        "Security for office",
+        "Residential security"
       ],
       "responses": [
         "Perfect! 🛡️ FastSewa SecureForce provides trained security personnel.\n\nIs this for Residential or Commercial property?"
@@ -36,8 +57,13 @@
     {
       "tag": "medical_start",
       "patterns": [
-        "I need a doctor", "Medical help", "Book appointment",
-        "Doctor at home", "Nurse required", "Medical emergency"
+        "medical",
+        "I need a doctor",
+        "Medical help",
+        "Book appointment",
+        "Doctor at home",
+        "Nurse required",
+        "Medical emergency"
       ],
       "responses": [
         "I can connect you with a medical professional. 🏥\n\nPlease briefly describe the symptoms or requirements."
@@ -47,8 +73,13 @@
     {
       "tag": "legal_start",
       "patterns": [
-        "GST registration", "Legal help", "Company registration",
-        "Need lawyer", "GST filing", "Legal services"
+        "legal",
+        "GST registration",
+        "Legal help",
+        "Company registration",
+        "Need lawyer",
+        "GST filing",
+        "Legal services"
       ],
       "responses": [
         "FastSewa Filings can assist with Legal & GST services. ⚖️\n\nPlease email admin@fastsewa.com with your requirements, and our legal team will contact you within 24 hours."
@@ -57,8 +88,12 @@
     {
       "tag": "land_start",
       "patterns": [
-        "Land verification", "Property check", "Title verification",
-        "Verify land documents", "Property legal check"
+        "land",
+        "Land verification",
+        "Property check",
+        "Title verification",
+        "Verify land documents",
+        "Property legal check"
       ],
       "responses": [
         "Land Verification services help ensure safe property purchases. 🏞️\n\nPlease email the property details to admin@fastsewa.com for a detailed verification report."
@@ -67,42 +102,103 @@
     {
       "tag": "repair_start",
       "patterns": [
-        "Need repair", "Plumber needed", "Electrician required",
-        "AC repair", "Home maintenance", "Fix something"
+        "repair",
+        "Need repair",
+        "Plumber needed",
+        "Electrician required",
+        "AC repair",
+        "Home maintenance",
+        "Fix something"
       ],
       "responses": [
         "FastSewa Repair & Maintenance can help! 🔧\n\nPlease share which service you need (plumbing, electrical, carpentry, painting, etc.) at admin@fastsewa.com."
       ]
     },
     {
-      "tag": "vendor_start",
+      "tag": "finance_start",
       "patterns": [
-        "I want to register as a vendor", "Join as a partner",
-        "I am a doctor", "I am a contractor", "Vendor signup",
-        "Work with FastSewa", "Partner with you"
+        "finance",
+        "Finance assistant",
+        "Budget planning",
+        "Help with EMI",
+        "Monthly budget",
+        "Saving plan",
+        "Tax planning",
+        "Personal finance help",
+        "Finance help",
+        "Financial planning"
       ],
       "responses": [
-        "We're onboarding partners for all 6 services! 🤝\n\nPlease email your credentials and service category to admin@fastsewa.com to join our vendor network."
+        "FastSewa Finance Assistant will help you understand your income, expenses and savings. 💰\n\nFirst, please share your approximate monthly income in rupees. Example: 30000."
+      ],
+      "context_set": "waiting_for_finance_income"
+    },
+    {
+      "tag": "material_start",
+      "patterns": [
+        "material",
+        "Material supplier",
+        "Need construction material",
+        "Cement supplier",
+        "Bricks supplier",
+        "Rodi bajri supplier",
+        "Sand supplier",
+        "Aggregate supplier",
+        "Building material",
+        "Construction material quote",
+        "Electrical material",
+        "Plumbing material",
+        "Paint material",
+        "Hardware material",
+        "Steel material",
+        "Pipes and fittings"
+      ],
+      "responses": [
+        "FastSewa Material Hub connects you with verified suppliers for Construction, Electrical, Plumbing, Paint, Hardware, Steel and Pipes & Fittings. 🧱\n\nFirst, which material do you need? Example: Cement, TMT bars, wires, PVC pipes, paints, tools."
+      ],
+      "context_set": "waiting_for_material_type"
+    },
+    {
+      "tag": "vendor_start",
+      "patterns": [
+        "I want to register as a vendor",
+        "Join as a partner",
+        "I am a doctor",
+        "I am a contractor",
+        "Vendor signup",
+        "Work with FastSewa",
+        "Partner with you"
+      ],
+      "responses": [
+        "We are onboarding partners for all services. 🤝\n\nPlease email your credentials and service category to admin@fastsewa.com to join our vendor network."
       ]
     },
     {
       "tag": "thanks",
       "patterns": [
-        "Thank you", "Thanks", "Appreciate it", "Great", "Perfect"
+        "Thank you",
+        "Thanks",
+        "Appreciate it",
+        "Great",
+        "Perfect"
       ],
       "responses": [
-        "You're welcome! 😊 Let me know if you need anything else.",
-        "Happy to help! Feel free to reach out anytime."
+        "You are welcome. Let me know if you need anything else.",
+        "Happy to help. Feel free to reach out anytime."
       ]
     },
     {
       "tag": "goodbye",
       "patterns": [
-        "Bye", "Goodbye", "See you", "Later", "Exit"
+        "Bye",
+        "Goodbye",
+        "See you",
+        "Later",
+        "Exit"
       ],
       "responses": [
-        "Thank you for choosing FastSewa! Have a great day! 👋",
-        "Goodbye! Feel free to return anytime you need assistance."
+        "Thank you for choosing FastSewa. Have a great day! 👋",
+        "Goodbye. Feel free to return anytime you need assistance."
       ]
     }
   ]
